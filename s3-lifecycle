@@ -1,0 +1,61 @@
+# AWS S3 Bucket Setup with Lifecycle Rule
+
+This guide explains how to create an Amazon S3 bucket, upload objects, and configure lifecycle rules to automatically delete files after 1 day.
+
+---
+
+## Steps
+
+### Step 1: Create an S3 Bucket
+1. Go to **AWS Console ? S3**.
+2. Click **Create bucket**.
+3. Enter a bucket name (e.g., `mybucket123`).
+4. Select region.
+5. Keep default settings (or configure as required).
+6. Click **Create bucket**.
+
+---
+
+### Step 2: Upload an Object
+1. Open your newly created bucket.
+2. Go to the **Objects** tab.
+3. Click **Upload** and select a test file.
+4. Click **Upload**.
+
+---
+
+### Step 3: Create Lifecycle Rule
+1. In your bucket, go to the **Management** tab.
+2. Scroll down to **Lifecycle rules** and click **Create lifecycle rule**.
+3. Enter rule name (e.g., `delete-after-1-day`).
+4. Choose the scope:
+   - Apply to all objects in the bucket, or
+   - Apply to specific prefixes/folders.
+
+---
+
+### Step 4: Configure Rule Action
+1. Under **Lifecycle rule actions**, select:
+   - ?? **Expire current version of object**
+   - (Optional) Expire previous versions if versioning is enabled.
+2. Set **Number of days after object creation = 1**.
+
+---
+
+### Step 5: Review and Create
+1. Review the rule configuration.
+2. Click **Create rule**.
+3. ? Lifecycle rule is now active.
+
+---
+
+### Step 6: Verify Deletion
+- Wait for **24 hours**.
+- AWS will automatically delete the file after 1 day.
+
+---
+
+## Result
+Your S3 bucket now automatically deletes uploaded files after 1 day using lifecycle policies.
+
+---
